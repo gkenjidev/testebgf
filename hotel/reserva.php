@@ -17,14 +17,16 @@
 <body>
     <div class="container">
         <?php foreach($hoteis as $hotel): ?>
-            <div class="card" style="width: 18rem">
-                <img class="card-img-top" src="<?php echo $hotel["image"] ?>">
-                <div class="card-body">
-                    <h5 class="card-title"><?php echo $hotel["name"] ?></h2>
-                    <p class="card-text"><?php echo $hotel["address"] ?></p>
-                    <a href="efetuarReserva.php?id=<?php echo $hotel["id"] ?>" class="btn btn-primary">Reservar</a>
+            <a href="hotel.php?id=<? echo $hotel["id"] ?>">
+                <div class="card" style="width: 18rem">
+                    <img class="card-img-top" src="<?php echo $hotel["image"] ?>">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $hotel["name"] ?></h2>
+                        <p class="card-text"><?php echo $hotel["address"] ?></p>
+                        <a href="efetuarReserva.php?id=<?php echo $hotel["id"] ?>" class="btn btn-primary">Reservar</a>
+                    </div>
                 </div>
-            </div>
+            </a>
         <?php endforeach ?>
     </div>
 </body>

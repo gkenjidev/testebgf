@@ -12,7 +12,8 @@ function autenticarUsuario($cpf,$password){
 
 $usuario = buscarUsuario ($cpf,$password);
 if($usuario){
- 
+    session_start();
+    $_SESSION["cpf"] = $cpf;
     header('Location: ../hotel/reserva.php');
 
 }
