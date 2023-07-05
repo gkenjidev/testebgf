@@ -22,7 +22,7 @@
                 <div class="card-body">
                     <h5 class="card-title"><?php echo $hotel["name"] ?></h2>
                     <p class="card-text"><?php echo $hotel["address"] ?></p>
-                    <button class="btn btn-primary">Reservar</button>
+                    <a href="efetuarReserva.php?id=<?php echo $hotel["id"] ?>" class="btn btn-primary">Reservar</a>
                 </div>
             </div>
         <?php endforeach ?>
