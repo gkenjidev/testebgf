@@ -1,3 +1,11 @@
+<?php 
+
+    require_once "../bd/hoteis.php";
+
+    $hoteis = getHoteis();
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -6,31 +14,13 @@
     <title>Reserva</title>
 </head>
 <body>
-    <ul>
-        <h2>HOTEL BOB ESPONJA</h2>
-        <p>RUA AUGUSTA 9999</p>
-        <img> <a href="">
-        <li class="container"></li>
-        <form action="efetuarReserva.php" method="get">
-        </img>
-
-        <h2>HOTEL BOB ESPONJA</h2>
-        <p>RUA AUGUSTA 9999</p>
-        <img> <a href="">
-        <li class="container"></li>
-        </img>
-
-        <h2>HOTEL BOB ESPONJA</h2>
-        <p>RUA AUGUSTA 9999</p>
-        <img> <a href="">
-        <li class="container"></li>
-        </img>
-
-        <h2>HOTEL BOB ESPONJA</h2>
-        <p>RUA AUGUSTA 9999</p>
-        <img> <a href="">
-        <li class="container"></li>
-        </img>
-    </ul>
+    <div>
+        <?php foreach($hoteis as $hotel): ?>
+            <h2><?php echo $hotel["name"] ?></h2>
+            <p><?php echo $hotel["address"] ?></p>
+            <img src="<?php echo $hotel["image"] ?>">
+            <button>Reservar</button>
+        <?php endforeach ?>
+    </div>
 </body>
 </html>
