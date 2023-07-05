@@ -5,11 +5,12 @@
         $conn = conectarBanco();
         $sql = "SELECT * FROM clientes WHERE cpf='$cpf' AND password='$password'";
         $usuario = $conn -> query($sql);
+        $conn -> close();
         if ($usuario -> num_rows > 0) {
             return $usuario;
         }
-        $conn -> close();
-        return $usuario;
+       
+        return null;
     }
 
     function cadastrarUsuario($cpf, $name, $password) {
