@@ -3,7 +3,7 @@ require_once "../bd/login.php";
 if ($_SERVER["REQUEST_METHOD"]== "POST"){
     $cpf = $_POST ["cpf"];
     $password = $_POST ["password"];
-echo $cpf, $password;
+
     autenticarUsuario($cpf,$password);
 
 }
@@ -16,7 +16,7 @@ if($usuario){
     header('Location: ../hotel/reserva.php');
 
 }
-echo"CPF ou senha invalidos";
+echo"  CPF ou senha invalidos";
 die ("morto");
 }
 
